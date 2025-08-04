@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+.slider-width .card{
+  width: 300px;
+  margin: 0px 30px 0px 0px;
+  transition: left 0.5s ease;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.navbar .input-group .form-control {
+  padding-left: 2.5rem;
+}
+.navbar .input-group .input-group-text {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+.card-body .opacity{
+  opacity: 50%;
+}
+.next img,
+.prev img{
+ width: 40px;
+}
+.next{
+  position: absolute;
+  top: 200px;
+  left: -45px;
+  cursor: pointer;
+}
+.prev{
+  position: absolute;
+  top: 200px;
+  right: -45px;
+  cursor: pointer;
+}
+.links a{
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;
+}
+
+.circle-action{
+  width: 100px;
+  padding: 10px;
+  margin-left: 15px;
+  border-radius: 20px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 0;
+
+}
+.circle-container {
+  position: relative;
+}
+
+
+@media (max-width: 602px) {
+  .next img,
+  .prev img{
+    width: 40px;
+  }
+  .next{
+    position: static;
+    display: inline;
+    margin-top: 20px;
+    margin-left:33%;
+  }
+  .prev{
+    position: static;
+    display: inline;
+    margin-top: 20px;
+    margin-left:20px;
+  }
+  }
+
+  
+
+  .big-card .small-card{
+    width: 32%;
+  }
+  @media (max-width: 992px) {
+    .big-card .border-top{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    }
+
+.big-num .small-num{
+  width: 23%;
+}
+.content-width{
+  width: 68%;
+}
+
+@media (max-width: 992px) {
+  .content-width{
+    width: 100%;
+  }
+  }
+
+@media (max-width: 992px) {
+  .big-num .small-num{
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  }
+
+  @media (max-width: 600px) {
+    .big-num .small-num{
+      width: 100%;
+    }
+    }

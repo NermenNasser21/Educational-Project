@@ -1,0 +1,151 @@
+<div class="d-flex justify-content-between align-items-center my-4">
+  <h2>Manage Courses</h2>
+  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addCourseModal">+ New Course</button>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Level</th>
+            <th>Duration</th>
+            <th>Students Number</th>
+            <th>Instructor Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courses; index as i" >
+            <td>{{ i + 1 }}</td>
+            <td>
+                <img src="{{course.image}}" alt="courseimage" style="width: 100px; height: 8vh;">
+            </td>
+            <td>{{ course.title }}</td>
+            <td>{{ course.level }}</td>
+            <td>{{ course.duration }}</td>
+            <td>{{course.studentsNum}}</td>
+            <td>{{course.instructorName}}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteCourse(course.id)">
+                    Delete
+                </button>
+                <button class="btn btn-sm btn-outline-primary ms-2" (click)="editCourse(course)" data-bs-toggle="modal"
+                    data-bs-target="#editCourseModal">
+                    Edit
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- edit modal -->
+<div class="modal fade" id="editCourseModal" tabindex="-1" aria-labelledby="editCourseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form #editForm="ngForm" (ngSubmit)="updateCourse()">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCourseModalLabel">Edit Course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input [(ngModel)]="selectedCourse.title" name="title" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Level</label>
+                        <input [(ngModel)]="selectedCourse.level" name="level" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Instructor Name</label>
+                        <input [(ngModel)]="selectedCourse.instructorName" name="instructorName" class="form-control"
+                            required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Duration</label>
+                        <input [(ngModel)]="selectedCourse.duration" name="duration" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Students Number</label>
+                        <input [(ngModel)]="selectedCourse.studentsNum" name="studentsNum" class="form-control"
+                            required />
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- add modal -->
+<!-- Add Course Modal -->
+<div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCourseModalLabel">Add New Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input [(ngModel)]="newCourse.title" name="newTitle" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Instructor</label>
+                        <input [(ngModel)]="newCourse.instructorName" name="newInstructorName" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Duration</label>
+                        <input [(ngModel)]="newCourse.duration" name="newDuration" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Students Number</label>
+                        <input [(ngModel)]="newCourse.studentsNum" name="newstudentsNum" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rating</label>
+                        <input [(ngModel)]="newCourse.rating" name="newrating" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Level</label>
+                        <input [(ngModel)]="newCourse.level" name="newlevel" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Course Image</label>
+                        <input type="file" class="form-control" (change)="onCourseImageSelected($event)" />
+                    </div>
+
+                    <div *ngIf="newCourse.image" class="mb-3">
+                        <img [src]="newCourse.image" alt="Preview" style="max-width: 100%; max-height: 150px;" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Instructor Image</label>
+                        <input type="file" class="form-control" (change)="onInstructorImageSelected($event)" />
+                    </div>
+
+                    <div *ngIf="newCourse.instructorImg" class="mb-3">
+                        <img [src]="newCourse.instructorImg" alt="Preview" style="max-width: 100%; max-height: 150px;" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" (click)="addCourse()">Add Course</button>
+            </div>
+        </div>
+    </div>
+</div>

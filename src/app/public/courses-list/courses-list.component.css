@@ -1,0 +1,17 @@
+.search-box {
+            position: relative;
+        }
+
+        .fa-search {
+            position: absolute;
+            left: 6%;
+            top: 35%;
+            background-color: white;
+            color: rgba(9, 11, 13, 0.592);
+            ;
+        }
+
+        input[type=text] {
+            padding: 15px 50px;
+            color: #64748b;
+        }

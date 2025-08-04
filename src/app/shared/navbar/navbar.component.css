@@ -1,0 +1,16 @@
+
+
+      .dropdown-menu .dropdown-item::after {
+        content: none !important;
+      }
+      .navbar-nav .nav-link::after {
+        content: none !important;
+      }
+      .custom-padding {
+        margin-left: 50px; 
+      }
+      .custom-icon-size {
+        font-size: 0.6rem;
+      }
+     
+    

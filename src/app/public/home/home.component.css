@@ -1,0 +1,83 @@
+
+.bg-custum{
+    background-color:rgb(89, 84, 235);
+    opacity: 1;
+}
+.mt-n8 {
+    margin-top: -3.5rem;
+}
+.py-8{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.btn-custumm:hover{
+    background-color: white !important;
+    border:1px solid !important;
+    border-color: rgb(89, 84, 235) !important;
+    color: rgb(89, 84, 235) !important;
+
+}
+.btn-custum{
+    border-color: rgb(89, 84, 235) !important;
+    color: rgb(89, 84, 235) !important;
+}
+
+.btn-custum:hover,
+.btn-custumm{
+    background-color: rgb(89, 84, 235) !important;
+    color: white !important;
+}
+.text-custum{
+    color:rgb(27, 228, 27);
+}
+.containerr{
+    margin:0 100px;
+}
+.avatar{
+    height: 6rem !important;
+    width: 6rem !important;
+}
+.avatarr{
+    height: 6.5rem !important;
+    width: 6.5rem !important;
+}
+
+.hov:hover{
+  
+  
+    background-color: rgba(242, 242, 242, 0.823);
+    border-radius: 10px;
+   
+    
+}
+.container-custum{
+    margin:0 10rem;
+}
+.btn-custummm{
+    background-color: rgb(89, 84, 235) !important;
+    color: white !important;
+    
+}
+.btn-custummm:hover{
+    background-color: rgb(107, 103, 230) !important;
+}
+
+.sidebar li a{
+text-decoration: none;
+color:rgb(79, 78, 78) ; 
+}
+.sidebar li {
+margin-bottom: 2px !important;
+cursor: pointer;
+}
+
+.sidebar{
+    padding: 2%;
+
+}
+.activ{
+    
+    background-color: rgba(242, 242, 242, 0.823);
+    border-radius: 10px;
+}

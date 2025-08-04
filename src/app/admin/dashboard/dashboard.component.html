@@ -1,0 +1,57 @@
+<div class="container py-4">
+  <h2 class="mb-4">Admin Dashboard</h2>
+
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <div class="card text-bg-primary shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Courses</h5>
+          <p class="card-text fs-4">{{ courses.length }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-bg-success shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Students</h5>
+          <p class="card-text fs-4">128</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-bg-warning shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Instructors</h5>
+          <p class="card-text fs-4">8</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-light">
+      Latest Courses
+    </div>
+    <div class="card-body p-0">
+      <table class="table mb-0 table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Title</th>
+            <th>Instructor</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of courses | slice:0:5">
+            <td>{{ course.title }}</td>
+            <td>{{ course.instructorName }}</td>
+            <td>{{ course.duration }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
