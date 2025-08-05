@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:school-site": "node dist/school-site/server/server.mjs"
+    "build:ssr": "ng build --configuration production && ng run school-site:server:production",
+     "serve:ssr": "node dist/school-site/server/main.js"
   },
   "private": true,
   "dependencies": {
